@@ -10,3 +10,31 @@ qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/sr
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+19:05:13 **** Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+src/des_inputs.c: In function 'main':
+src/des_inputs.c:14:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
+       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+19:06:29 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+src/des_inputs.c:3:12: warning: extra tokens at end of #include directive
+ #include <>string.h>
+            ^
+src/des_inputs.c:3:10: error: empty filename in #include
+ #include <>string.h>
+          ^
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
+src/des_inputs.c: In function 'main':
+src/des_inputs.c:15:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
+       ^
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
+19:06:35 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  

@@ -1,15 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "des-mva.h"
 
 void displayMenu();
 
 int main(void) {
 	char userInput[4];
-	displayMenu();
-	scanf("%3s", userInput);
-	if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
-		printf("Enter your ID: ");
-		scanf("%d", personId);
+	char personID[32];
+
+	while(1) {
+		displayMenu();
+		scanf("%s", userInput);
+		if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
+			printf("Enter your ID: ");
+			scanf("%s", personID);
+
+		}
+		if(strcmp(userInput, "exit") == 0) {
+			break;
+		}
 	}
 	return EXIT_SUCCESS;
 }
@@ -27,5 +37,5 @@ void displayMenu() {
 	printf("\t%s\n", "glu - guard left unlock");
 	printf("\t%s\n", "grl - guard right lock");
 	printf("\t%s\n", "gll - guard left lock");
-	printf("\t%s\n", "q  - quit the program");
+	printf("\t%s\n", "exit  - quit the program");
 }
