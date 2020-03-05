@@ -1,7 +1,11 @@
-18:44:46 **** Build of configuration x86_64-debug for project des_controller ****
+20:52:19 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+src/des_controller.c: In function 'main':
+src/des_controller.c:15:6: warning: unused variable 'rcvid' [-Wunused-variable]
+  int rcvid;
+      ^
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
 
-18:44:46 Build Finished (took 190ms)
+20:52:19 Build Finished (took 175ms)
 

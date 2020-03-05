@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+	pid_t displaypid;
+
+	// TODO: Replace with number of required arguments
+		if(argc != 5) {
+			fprintf(stderr, "Wrong number of arguments\n");
+			exit(EXIT_FAILURE);
+		}
+
+		serverpid = atoi(argv[1]);
+
+		//TODO: Attach to display - need nid, chid, coid
+		if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
+				fprintf (stderr, "ConnectAttach error\n");
+				perror (NULL);
+				exit(EXIT_FAILURE);
+			}
+
+	return EXIT_SUCCESS;
+}

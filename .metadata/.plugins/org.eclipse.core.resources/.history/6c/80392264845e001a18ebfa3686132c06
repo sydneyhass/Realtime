@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/neutrino.h>
+#include <sys/netmgr.h>
+
+int main(void) {
+	int chid;
+
+	chid = ChannelCreate(0);
+
+	return EXIT_SUCCESS;
+}
