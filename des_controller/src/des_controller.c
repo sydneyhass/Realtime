@@ -13,9 +13,9 @@ int main(int argc, char* argv[]) {
 	int coid;
 	int chid;
 	int rcvid;
+	Person person;
 
-	// TODO: Replace with number of required arguments
-	if(argc != 5) {
+	if(argc != 2) {
 		fprintf(stderr, "Wrong number of arguments\n");
 		exit(EXIT_FAILURE);
 	}
@@ -35,10 +35,9 @@ int main(int argc, char* argv[]) {
 	}
 
 	while(1) {
-		//TODO: Create person struct
-//		if((rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-//
-//		}
+		if((rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
+
+		}
 
 		//TODO: Process state machine
 		//TODO: Create display struct
