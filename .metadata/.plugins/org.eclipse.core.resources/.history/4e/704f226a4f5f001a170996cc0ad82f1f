@@ -14,7 +14,6 @@ int main(int argc, char* argv[]) {
 	int personID = 0;
 	int weight = 0;
 	pid_t serverpid;
-	Person person;
 
 	// TODO: Replace with number of required arguments
 	if(argc != 5) {

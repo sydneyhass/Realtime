@@ -83,7 +83,7 @@ const char *outMessage[NUM_OUTPUTS] = {
 typedef struct {
 	int personID;
 	int weight;
-	enum {
+	typedef enum {
 		INBOUND = 0,
 		OUTBOUND = 1
 	} direction;
