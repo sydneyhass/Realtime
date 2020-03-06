@@ -37,7 +37,6 @@ const char *outMessage[NUM_OUTPUTS] = {
 };
 
 // inputs client sends a Person struct to its server, the controller
-
 typedef struct {
 	int personID;
 	int weight;

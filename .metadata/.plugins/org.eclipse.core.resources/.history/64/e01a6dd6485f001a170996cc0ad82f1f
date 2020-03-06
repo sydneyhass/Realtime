@@ -37,7 +37,6 @@ const char *outMessage[NUM_OUTPUTS] = {
 };
 
 // inputs client sends a Person struct to its server, the controller
-
 typedef struct {
 	int personID;
 	int weight;
@@ -45,7 +44,9 @@ typedef struct {
 		INBOUND = 0,
 		OUTBOUND = 1
 	} direction;
-	State state;
+	//TODO :: fields for person's ID (int), weight (int), direction (inbound or outbound),
+	//	and some way to remember what state the Person is in. Suppose the Person in "Left Scan" state.
+	//	You need a way to represent that.
 } Person;
 
 // controller client sends a Display struct to its server, the display
