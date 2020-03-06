@@ -10,33 +10,17 @@
 #ifndef DOOR_ENTRY_SYSTEM_H_
 #define DOOR_ENTRY_SYSTEM_H_
 
-#define NUM_STATES 7	// where n = number of states in your finite state machine (FSM)
+#define NUM_STATES n	// where n = number of states in your finite state machine (FSM)
 typedef enum {
-	START = 0,
-	SCAN = 1,
-	UNLOCK = 2,
-	OPEN = 3,
-	LOCK = 4,
-	CLOSE = 6,
-	EXIT = 7
+	//TODO :: to see the list of //TODOS, Window > Show View > Tasks
+	//TODO :: assign an enum value, one for each state
 } State;
 
-#define NUM_INPUTS 12	// where n equals the number of input commands that drive the FSM.
+#define NUM_INPUTS n	// where n equals the number of input commands that drive the FSM.
 			// From the assignment specification, notice the prompt. Each command, ls, rs, etc.
 			// Count those...
 typedef enum {
-	ls = 0,
-	rs = 1,
-	ws = 2,
-	gru = 3,
-	glu = 4,
-	lo = 5,
-	ro = 6,
-	lc = 7,
-	rc = 8,
-	grl = 9,
-	gll = 10,
-	exit = 11
+	//TODO :: assign an enum value, one for each input command
 } Input;
 
 const char *inMessage[NUM_INPUTS] = {
@@ -54,32 +38,17 @@ const char *inMessage[NUM_INPUTS] = {
 	"exit"
 };
 
-#define NUM_OUTPUTS 9	// where n equals the number of outputs messages from the FSM.
+#define NUM_OUTPUTS n	// where n equals the number of outputa messages from the FSM.
 typedef enum {
-	GLU_MSG = 0,
-	GRU_MSG =1,
-	LO_MSG = 2,
-	RO_MSG = 3,
-	LC_MSG = 4,
-	RC_MSG = 5,
-	GLL_MSG = 6,
-	GRL_MSG = 7,
-	WAIT_MSG = 8
+	//TODO :: assign an enum value, one for each output message from the FSM
 } Output;
 
 const char *outMessage[NUM_OUTPUTS] = {
-	"Left door unlocked by Guard",
-	"Right door unlocked by Guard",
-	"Person opened left door",
-	"Person opened right door",
-	"Left door closed (automatically)",
-	"Right door closed (automatically)",
-	"Left door locked by Guard",
-	"Right door locked by Guard",
-	"Waiting for person..."
+	//TODO :: each output message. For example, "Person opened left door"
 };
 
 // inputs client sends a Person struct to its server, the controller
+
 typedef struct {
 	int personID;
 	int weight;
@@ -92,8 +61,10 @@ typedef struct {
 
 // controller client sends a Display struct to its server, the display
 typedef struct {
-	int outMessage;
-	Person person;
+	//TODO :: fields for the output message and the Person. For the output message, I used an int, which
+	//	is the index into the outMessages array. That way I don't pass strings in my messages.
+	//	The Person field is needed, as some output message require information from the Person.
+	//	Specifically, those messages that display the Person's ID and weight.
 } Display;
 
 #endif /* DOOR_ENTRY_SYSTEM_H_ */

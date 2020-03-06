@@ -12,13 +12,8 @@
 
 #define NUM_STATES 7	// where n = number of states in your finite state machine (FSM)
 typedef enum {
-	START = 0,
-	SCAN = 1,
-	UNLOCK = 2,
-	OPEN = 3,
-	LOCK = 4,
-	CLOSE = 6,
-	EXIT = 7
+	//TODO :: to see the list of //TODOS, Window > Show View > Tasks
+	//TODO :: assign an enum value, one for each state
 } State;
 
 #define NUM_INPUTS 12	// where n equals the number of input commands that drive the FSM.
