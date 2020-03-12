@@ -33,15 +33,30 @@ int main(int argc, char* argv[]) {
 		if (strcmp(userInput, inMessage[LS_INPUT]) == 0 || strcmp(userInput, inMessage[RS_INPUT]) == 0) {
 			printf("Enter your ID: ");
 			scanf("%d", person.personID);
+			person.direction = INBOUND;
+			person.state = SCAN_STATE;
 		}
-		if(strcmp(userInput, inMessage[WS_INPUT]) == 0) {
+		else if(strcmp(userInput, inMessage[WS_INPUT]) == 0) {
 			printf("Enter your weight: ");
 			scanf("%d", person.weight);
+			person.direction = OUTBOUND;
+			person.state = SCAN_STATE;
 		}
-		if(strcmp(userInput, inMessage[EXIT_INPUT]) == 0) {
-			break;
+		else if(strcmp(userInput, inMessage[GLU_INPUT]) == 0 || strcmp(userInput, inMessage[GRU_INPUT]) == 0) {
+			person.state = UNLOCK_STATE;
 		}
-
+		else if(strcmp(userInput, inMessage[LC_INPUT]) == 0 || strcmp(userInput, inMessage[RC_INPUT]) == 0) {
+			person.state = CLOSE_STATE;
+		}
+		else if(strcmp(userInput, inMessage[GLL_INPUT]) == 0 || strcmp(userInput, inMessage[GRL_INPUT]) == 0) {
+			person.state = LOCK_STATE;
+		}
+		else if(strcmp(userInput, inMessage[RO_INPUT]) == 0 || strcmp(userInput, inMessage[LO_INPUT]) == 0) {
+			person.state = OPEN_STATE;
+		}
+		else if(strcmp(userInput, inMessage[EXIT_INPUT]) == 0) {
+			person.state = EXIT_STATE;
+		}
 		if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
 			fprintf (stderr, "MsgSend had an error\n");
 			exit (EXIT_FAILURE);

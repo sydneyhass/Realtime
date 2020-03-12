@@ -57,7 +57,7 @@ const char *inMessage[NUM_INPUTS] = {
 #define NUM_OUTPUTS 9	// where n equals the number of outputs messages from the FSM.
 typedef enum {
 	GLU_MSG = 0,
-	GRU_MSG =1,
+	GRU_MSG = 1,
 	LO_MSG = 2,
 	RO_MSG = 3,
 	LC_MSG = 4,
@@ -92,7 +92,7 @@ typedef struct {
 
 // controller client sends a Display struct to its server, the display
 typedef struct {
-	int outMessage;
+	Output outMessage;
 	Person person;
 } Display;
 
