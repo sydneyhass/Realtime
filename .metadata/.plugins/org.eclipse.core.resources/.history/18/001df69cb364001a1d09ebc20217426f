@@ -27,18 +27,18 @@ int main(void) {
 			perror("Display MsgRecieve error.\n");
 			exit(EXIT_FAILURE);
 		}
-		if (strcmp(display.person.msg, inMessage[LS_INPUT]) == 0
+		if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
 				|| strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
 			printf("Person scanned ID, ID = %d\n", display.person.personID);
 		}
 
-		else if (strcmp(display.person.msg, inMessage[WS_INPUT]) == 0) {
+		else if (strcmp(rMsg, inMessage[WS_INPUT]) == 0) {
 			printf("Person weighed, weight = %d\n", display.person.weight);
 		}
 		else {
 			printf("%s\n", outMessage[display.outMessage]);
 		}
-		if (MsgReply(rcvid, EOK, NULL, 0) == -1) {
+		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
 			perror("Display MsgReply error.\n");
 			exit(EXIT_FAILURE);
 		}

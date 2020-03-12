@@ -38,7 +38,7 @@ int main(void) {
 		else {
 			printf("%s\n", outMessage[display.outMessage]);
 		}
-		if (MsgReply(rcvid, EOK, NULL, 0) == -1) {
+		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
 			perror("Display MsgReply error.\n");
 			exit(EXIT_FAILURE);
 		}
