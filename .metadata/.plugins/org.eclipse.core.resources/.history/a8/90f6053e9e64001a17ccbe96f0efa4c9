@@ -21,13 +21,9 @@ void *close_state(Person *p, Display *display);
 
 void *start_state(Person *p) {
 	// Check for scan state, no message made as display creates it
-	if (strcmp(p->msg, inMessage[LS_INPUT]) == 0 || strcmp(p->msg, inMessage[RS_INPUT]) == 0){
-		p->state = SCAN_STATE;
+	if (p->state == SCAN_STATE)
 		return scan_state;
-	}
-	if(strcmp(p->msg, inMessage[EXIT_INPUT]) == 0) {
-		display->outMessage = WAIT_MSG;
-	}
+
 	// Invalid state, make person state start for the purpose of display
 	// return no message, console would just display menu again
 	p->state = START_STATE;
@@ -151,7 +147,7 @@ int main(int argc, char* argv[]) {
 	printf("The controller is running as PID %d", getpid());
 
 	while (1) {
-		if ((rcvid = MsgReceive(chid, &person, sizeof(Person), NULL)) < 0) {
+		if ((rcvid = MsgReceive(chid, &person, sizeof(person), NULL)) < 0) {
 			perror("Controller's MsgReceive error.");
 			return EXIT_FAILURE;
 		}
@@ -161,7 +157,7 @@ int main(int argc, char* argv[]) {
 
 		// Add person to display struct
 		display.person = person;
-		if (MsgSend(coid, &display, sizeof(display) + 1, NULL, 0) == -1) {
+		if (MsgSend(coid, &display, sizeof(display), NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}
