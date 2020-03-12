@@ -46,7 +46,7 @@ int main(void) {
 	}
 
 	if (ChannelDestroy(chid) == -1) {
-		perror("Display ChannelDestroy error.\n");
+		perror("Display ChannelDestroy error.");
 		exit(EXIT_FAILURE);
 	}
 

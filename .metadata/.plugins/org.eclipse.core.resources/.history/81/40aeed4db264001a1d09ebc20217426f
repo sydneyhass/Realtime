@@ -30,17 +30,18 @@ int main(int argc, char* argv[]) {
 	while (1) {
 		displayMenu();
 		scanf("%s", person.msg);
+		printf("User Input: %s == %s", person.msg, inMessage[LS_INPUT]);
 
 		if ((strcmp(person.msg, inMessage[LS_INPUT]) == 0)
 				|| (strcmp(person.msg, inMessage[RS_INPUT]) == 0)) {
 
-			printf("Enter your ID: \n");
+			printf("Enter your ID: ");
 			scanf("%d", &person.personID);
 			person.direction = INBOUND;
 
 		} else if (strcmp(person.msg, inMessage[WS_INPUT]) == 0) {
 
-			printf("Enter your weight: \n");
+			printf("Enter your weight: ");
 			scanf("%d", &person.weight);
 			person.direction = OUTBOUND;
 

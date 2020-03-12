@@ -178,11 +178,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	if(ConnectDetach(coid) == -1) {
-		perror("Controller ConnectDetach error.\n");
+		perror("Controller ConnectDetach error.");
 		exit(EXIT_FAILURE);
 	}
 	if(ChannelDestroy(chid) == -1) {
-		perror("Controller ChannelDestory error.\n");
+		perror("Controller ChannelDestory error.");
 		exit(EXIT_FAILURE);
 	}
 

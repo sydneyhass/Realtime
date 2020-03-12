@@ -16,16 +16,16 @@ int main(void) {
 	Display display;
 
 	if ((chid = ChannelCreate(0)) == -1) {
-		perror("Display ChannelCreate error.\n");
+		perror("Display ChannelCreate error.");
 		exit(EXIT_FAILURE);
 	}
 
-	printf("The display is running as PID: %d\n", getpid());
+	printf("The display is running as PID: %d", getpid());
 
 	while (1) {
 
 		if ((rcvid = MsgReceive(chid, &display, sizeof(Display), NULL)) < 0) {
-			perror("Display MsgRecieve error.\n");
+			perror("Display MsgRecieve error.");
 			exit(EXIT_FAILURE);
 		}
 		if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
@@ -40,13 +40,13 @@ int main(void) {
 			printf("%s\n", outMessage[0]);
 		}
 		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
-			perror("Display MsgReply error.\n");
+			perror("Display MsgReply error.");
 			exit(EXIT_FAILURE);
 		}
 	}
 
 	if (ChannelDestroy(chid) == -1) {
-		perror("Display ChannelDestroy error.\n");
+		perror("Display ChannelDestroy error.");
 		exit(EXIT_FAILURE);
 	}
 

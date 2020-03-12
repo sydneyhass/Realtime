@@ -40,13 +40,13 @@ int main(void) {
 			printf("%s\n", outMessage[0]);
 		}
 		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
-			perror("Display MsgReply error.\n");
+			perror("Display MsgReply error.");
 			exit(EXIT_FAILURE);
 		}
 	}
 
 	if (ChannelDestroy(chid) == -1) {
-		perror("Display ChannelDestroy error.\n");
+		perror("Display ChannelDestroy error.");
 		exit(EXIT_FAILURE);
 	}
 
