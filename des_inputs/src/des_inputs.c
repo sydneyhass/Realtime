@@ -14,42 +14,45 @@ int main(int argc, char* argv[]) {
 	pid_t serverpid;
 	Person person;
 
-	if(argc != 2) {
+	if (argc != 2) {
 		fprintf(stderr, "Wrong number of arguments\n");
 		exit(EXIT_FAILURE);
 	}
 
 	serverpid = atoi(argv[1]);
 
-	if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-		fprintf (stderr, "ConnectAttach error\n");
-		perror (NULL);
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0))
+			== -1) {
+		fprintf(stderr, "ConnectAttach error\n");
+		perror(NULL);
 		exit(EXIT_FAILURE);
 	}
 
-	while(1) {
+	while (1) {
 		displayMenu();
 		scanf("%s", userInput);
-		if (strcmp(userInput, inMessage[LS_INPUT]) == 0 || strcmp(userInput, inMessage[RS_INPUT]) == 0) {
+		if (strcmp(userInput, inMessage[LS_INPUT]) == 0
+				|| strcmp(userInput, inMessage[RS_INPUT]) == 0) {
 			printf("Enter your ID: ");
 			scanf("%d", person.personID);
 		}
-		if(strcmp(userInput, inMessage[WS_INPUT]) == 0) {
+		if (strcmp(userInput, inMessage[WS_INPUT]) == 0) {
 			printf("Enter your weight: ");
 			scanf("%d", person.weight);
 		}
-		if(strcmp(userInput, inMessage[EXIT_INPUT]) == 0) {
+		if (strcmp(userInput, inMessage[EXIT_INPUT]) == 0) {
 			break;
 		}
 
-		if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
-			fprintf (stderr, "MsgSend had an error\n");
-			exit (EXIT_FAILURE);
+		if (MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
+			fprintf(stderr, "MsgSend had an error\n");
+			exit(EXIT_FAILURE);
 		}
 	}
 
-	if(ConnectDetach(coid) == -1) {
-		//TODO:: Error
+	if (ConnectDetach(coid) == -1) {
+		perror("ConnectDetach error.");
+		exit(EXIT_FAILURE);
 	}
 
 	return EXIT_SUCCESS;
