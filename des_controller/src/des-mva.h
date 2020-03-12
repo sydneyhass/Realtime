@@ -96,7 +96,7 @@ typedef struct {
 // controller client sends a Display struct to its server, the display
 typedef struct {
 	Output outMessage;
-	Person *person;
+	Person person;
 } Display;
 
 #endif /* DOOR_ENTRY_SYSTEM_H_ */

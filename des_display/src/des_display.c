@@ -27,13 +27,16 @@ int main(void) {
 			perror("Display MsgRecieve error.\n");
 			exit(EXIT_FAILURE);
 		}
-		if (strcmp(display.person->msg, inMessage[LS_INPUT]) == 0
-				|| strcmp(display.person->msg, inMessage[RS_INPUT]) == 0) {
-			printf("Person scanned ID, ID = %d\n", display.person->personID);
+
+		printf("%s\n", display.person.msg);
+		if (display.person.state == SCAN_STATE && !display.person.weight) {
+			printf("Person scanned ID, ID = %d\n", display.person.personID);
 		}
 
-		else if (strcmp(display.person->msg, inMessage[WS_INPUT]) == 0) {
-			printf("Person weighed, weight = %d\n", display.person->weight);
+		else if (display.person.state == SCAN_STATE) {
+			printf("Person weighed, weight = %d\n", display.person.weight);
+		} else if(display.person.state == EXIT_STATE) {
+			break;
 		}
 		else {
 			printf("%s\n", outMessage[display.outMessage]);

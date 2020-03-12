@@ -157,6 +157,8 @@ int main(int argc, char* argv[]) {
 			return EXIT_FAILURE;
 		}
 
+		printf("%s\n", person.msg);
+
 		if(strcmp(person.msg, inMessage[EXIT_INPUT]) == 0)
 			person.state = EXIT_STATE;
 
@@ -164,7 +166,9 @@ int main(int argc, char* argv[]) {
 		statefunc = (StateFunc) (*statefunc)(&person, &display);
 
 		// Add person to display struct
-		display.person = &person;
+		display.person = person;
+		printf("%s\n", display.person.msg);
+
 		if (MsgSend(coid, &display, sizeof(Display) + 1, NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
