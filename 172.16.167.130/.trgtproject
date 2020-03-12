@@ -21,7 +21,7 @@
                 <name value="172.16.167.130"/>
             </project>
             <qconnport value="8000"/>
-            <qconnguid value="d81f6691-858c-4ece-9f70-be3c120c54ef"/>
+            <qconnguid value="e0720801-5097-458b-9dbf-c11e9414211a"/>
             <targettmpdir value="/tmp"/>
             <qconnhostname value="172.16.167.130"/>
         </item>

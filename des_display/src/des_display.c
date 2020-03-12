@@ -3,26 +3,34 @@
 #include <sys/neutrino.h>
 #include <sys/netmgr.h>
 #include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
 
 #include "../../des_inputs/src/des-mva.h"
 
 int main(void) {
 	int chid;
-	Display display;
 	char rMsg[256];
 	int rcvid;
+	Display display;
+
+	printf("The display is running as PID: %d", getpid());
 
 	if ((chid = ChannelCreate(0)) == -1) {
-		perror("ChannelCreate error.");
+		perror("Display ChannelCreate error.");
 		exit(EXIT_FAILURE);
 	}
 
 	while (1) {
 		if ((rcvid = MsgReceive(chid, &display, sizeof(display), NULL)) < 0) {
-			perror("MesRecieve error.");
+			perror("Display MsgRecieve error.");
 			exit(EXIT_FAILURE);
 		}
-
+		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
+			perror("Display MsgReply error.");
+			exit(EXIT_FAILURE);
+		}
 		if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
 				|| strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
 			printf("Person scanned ID, ID = %d\n", display.person.personID);
@@ -38,7 +46,7 @@ int main(void) {
 	}
 
 	if (ChannelDestroy(chid) == -1) {
-		perror("ChannelDestroy error.");
+		perror("Display ChannelDestroy error.");
 		exit(EXIT_FAILURE);
 	}
 

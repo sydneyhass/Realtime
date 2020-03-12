@@ -60,7 +60,7 @@ void *unlock_state(Person *p, Display *display) {
 	}
 
 	// No output message and remain in unlock state
-	display->outMessage = NULL;
+	display->outMessage = ERR_MSG;
 	return unlock_state;
 
 }
@@ -78,12 +78,12 @@ void *open_state(Person *p, Display *display) {
 		display->outMessage = RC_MSG;
 		return close_state;
 	}
-	display->outMessage = NULL;
+	display->outMessage = ERR_MSG;
 	return open_state;
 }
 
 void *lock_state(Person *p, Display *display) {
-	//Unlock r if inbound
+	// Unlock r if inbound
 	if (p->state == UNLOCK_STATE && p->direction == INBOUND) {
 		display->outMessage = GRU_MSG;
 		return unlock_state;
@@ -92,7 +92,7 @@ void *lock_state(Person *p, Display *display) {
 		display->outMessage = WAIT_MSG;
 		return start_state;
 	}
-	display->outMessage = NULL;
+	display->outMessage = ERR_MSG;
 	return lock_state;
 }
 
@@ -105,7 +105,7 @@ void *close_state(Person *p, Display *display) {
 		display->outMessage = GRL_MSG;
 		return lock_state;
 	}
-	display->outMessage = NULL;
+	display->outMessage = ERR_MSG;
 	return close_state;
 }
 
@@ -127,20 +127,20 @@ int main(int argc, char* argv[]) {
 	displaypid = atoi(argv[1]);
 
 	if ((chid = ChannelCreate(0)) == -1) {
-		fprintf(stderr, "Error creating channel");
+		fprintf(stderr, "Controller error creating channel");
 		exit(EXIT_FAILURE);
 	}
 
 	//TODO: Attach to display - need nid, chid, coid
 	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-		fprintf(stderr, "ConnectAttach error\n");
+		fprintf(stderr, "Controller ConnectAttach error\n");
 		perror(NULL);
 		exit(EXIT_FAILURE);
 	}
 
 	while (1) {
 		if ((rcvid = MsgReceive(chid, &person, sizeof(person), NULL)) < 0) {
-			perror("MsgReceive error.");
+			perror("Controller's MsgReceive error.");
 			return EXIT_FAILURE;
 		}
 
@@ -149,13 +149,13 @@ int main(int argc, char* argv[]) {
 
 		// Add person to display struct
 		display.person = person;
-		if (MsgSend(displaypid, &display, sizeof(display), NULL, 0) == -1L) {
-			fprintf(stderr, "MsgSend had an error\n");
+		if (MsgSend(displaypid, &display, sizeof(display), NULL, 0) == -1) {
+			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}
 
 		if (MsgReply(rcvid, EOK, NULL, 0) == -1) {
-			perror("MsgReply error.");
+			perror("Controller's MsgReply error.");
 			exit(EXIT_FAILURE);
 		}
 

@@ -1,1516 +1,202 @@
-18:44:20 **** Build of configuration x86_64-debug for project des_display ****
+21:44:40 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-18:44:46 **** Build of configuration x86_64-debug for project des_controller ****
+21:44:44 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:44:44 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:44:44 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:46:26 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:46:26 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+make: *** No rule to make target 'src/des-mva.h', needed by 'build/x86_64-debug/src/des_display.o'.  Stop.
+21:46:26 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:46:52 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:46:52 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:46:52 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:46:56 **** Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-18:45:27 **** Build of configuration x86_64-debug for project des_inputs ****
+21:46:56 **** Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+src/des_display.c: In function 'main':
+src/des_display.c:17:9: warning: unused variable 'person' [-Wunused-variable]
+  Person person;
+         ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+21:46:56 **** Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-19:05:13 **** Build of configuration x86_64-debug for project des_inputs ****
+21:48:17 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:14:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
-       ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-19:06:29 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:3:12: warning: extra tokens at end of #include directive
- #include <>string.h>
-            ^
-src/des_inputs.c:3:10: error: empty filename in #include
- #include <>string.h>
-          ^
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:15:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(userInput, "ls") == 0 || strcmp(userInput, "rs") == 0) {
-       ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-19:06:35 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:31:29 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:17:5: error: 'argc' undeclared (first use in this function)
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-  if(argc != 5) {
-     ^
-src/des_inputs.c:17:5: note: each undeclared identifier is reported only once for each function it appears in
-src/des_inputs.c:22:19: error: 'argv' undeclared (first use in this function)
-  serverpid = atoi(argv[1]);
-                   ^
-src/des_inputs.c:23:13: warning: implicit declaration of function 'ConnectAttach' [-Wimplicit-function-declaration]
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-             ^
-src/des_inputs.c:23:27: error: 'ND_LOCAL_NODE' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                           ^
-src/des_inputs.c:23:56: error: '_NTO_SIDE_CHANNEL' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                                                        ^
-src/des_inputs.c:34:16: error: 'personID' undeclared (first use in this function)
-    scanf("%d", personID);
-                ^
-src/des_inputs.c:43:6: warning: implicit declaration of function 'MsgSend' [-Wimplicit-function-declaration]
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-      ^
-src/des_inputs.c:43:21: error: 'sMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                     ^
-src/des_inputs.c:43:46: error: 'rMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                              ^
-src/des_inputs.c:43:59: error: 'server_response_t' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                                           ^
-src/des_inputs.c:49:2: warning: implicit declaration of function 'ConnectDetach' [-Wimplicit-function-declaration]
-  ConnectDetach(coid);
-  ^
-src/des_inputs.c:12:6: warning: unused variable 'personId' [-Wunused-variable]
-  int personId;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-20:31:46 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:19:5: error: 'argc' undeclared (first use in this function)
-  if(argc != 5) {
-     ^
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-src/des_inputs.c:19:5: note: each undeclared identifier is reported only once for each function it appears in
-src/des_inputs.c:24:19: error: 'argv' undeclared (first use in this function)
-  serverpid = atoi(argv[1]);
-                   ^
-src/des_inputs.c:36:16: error: 'personID' undeclared (first use in this function)
-    scanf("%d", personID);
-                ^
-src/des_inputs.c:45:21: error: 'sMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                     ^
-src/des_inputs.c:45:46: error: 'rMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                              ^
-src/des_inputs.c:45:59: error: 'server_response_t' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                                           ^
-src/des_inputs.c:14:6: warning: unused variable 'personId' [-Wunused-variable]
-  int personId;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-20:32:13 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:11:5: warning: second argument of 'main' should be 'char **' [-Wmain]
- int main(int argc, char* argv) {
-     ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:24:19: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
-  serverpid = atoi(argv[1]);
-                   ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:118:12: note: expected 'const char *' but argument is of type 'char'
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
- extern int atoi(const char *__nptr);
-            ^
-src/des_inputs.c:36:16: error: 'personID' undeclared (first use in this function)
-    scanf("%d", personID);
-                ^
-src/des_inputs.c:36:16: note: each undeclared identifier is reported only once for each function it appears in
-src/des_inputs.c:45:21: error: 'sMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                     ^
-src/des_inputs.c:45:46: error: 'rMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                              ^
-src/des_inputs.c:45:59: error: 'server_response_t' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                                           ^
-src/des_inputs.c:14:6: warning: unused variable 'personId' [-Wunused-variable]
-  int personId;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-20:32:26 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:11:5: warning: second argument of 'main' should be 'char **' [-Wmain]
- int main(int argc, char* argv) {
-     ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:24:19: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-  serverpid = atoi(argv[1]);
-                   ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:118:12: note: expected 'const char *' but argument is of type 'char'
- extern int atoi(const char *__nptr);
-            ^
-src/des_inputs.c:45:21: error: 'sMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                     ^
-src/des_inputs.c:45:21: note: each undeclared identifier is reported only once for each function it appears in
-src/des_inputs.c:45:46: error: 'rMsg' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                              ^
-src/des_inputs.c:45:59: error: 'server_response_t' undeclared (first use in this function)
-   if(MsgSend(coid, &sMsg, sizeof(sMsg) + 1, &rMsg, sizeof(server_response_t)) == -1L) {
-                                                           ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-20:33:19 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:11:5: warning: second argument of 'main' should be 'char **' [-Wmain]
- int main(int argc, char* argv) {
-     ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:24:19: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
-  serverpid = atoi(argv[1]);
-                   ^
-In file included from src/des_inputs.c:2:0:
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:118:12: note: expected 'const char *' but argument is of type 'char'
- extern int atoi(const char *__nptr);
-            ^
-src/des_inputs.c:46:21: error: 'person' undeclared (first use in this function)
-   if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
-                     ^
-src/des_inputs.c:46:21: note: each undeclared identifier is reported only once for each function it appears in
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-20:33:56 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:11:5: warning: second argument of 'main' should be 'char **' [-Wmain]
- int main(int argc, char* argv) {
-     ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:24:19: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
-  serverpid = atoi(argv[1]);
-                   ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:118:12: note: expected 'const char *' but argument is of type 'char'
- extern int atoi(const char *__nptr);
-            ^
-src/des_inputs.c:36:4: warning: 'personID' may be used uninitialized in this function [-Wmaybe-uninitialized]
-    scanf("%d", personID);
-    ^
-src/des_inputs.c:40:4: warning: 'weight' may be used uninitialized in this function [-Wmaybe-uninitialized]
-    scanf("%d", weight);
-    ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:34:10 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c:11:5: warning: second argument of 'main' should be 'char **' [-Wmain]
- int main(int argc, char* argv) {
-     ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:24:19: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
-  serverpid = atoi(argv[1]);
-                   ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:118:12: note: expected 'const char *' but argument is of type 'char'
- extern int atoi(const char *__nptr);
-            ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:34:25 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:42:16 **** Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:19:2: error: 'serverpid' undeclared (first use in this function)
-  serverpid = atoi(argv[1]);
-  ^
-src/des_controller.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c:21:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-  if(chid = ChannelCreate(0)) {
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  ^
-src/des_controller.c:33:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:33:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:33:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-src/des_controller.c:9:6: warning: variable 'coid' set but not used [-Wunused-but-set-variable]
-  int coid;
-      ^
-src/des_controller.c:8:8: warning: unused variable 'displaypid' [-Wunused-variable]
-  pid_t displaypid;
-        ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:42:31 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:19:2: error: 'diplaypid' undeclared (first use in this function)
-  diplaypid = atoi(argv[1]);
-  ^
-src/des_controller.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c:21:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  if(chid = ChannelCreate(0)) {
-  ^
-src/des_controller.c:26:42: error: 'serverpid' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                                          ^
-src/des_controller.c:33:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:33:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:33:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-src/des_controller.c:9:6: warning: variable 'coid' set but not used [-Wunused-but-set-variable]
-  int coid;
-      ^
-src/des_controller.c:8:8: warning: unused variable 'displaypid' [-Wunused-variable]
-  pid_t displaypid;
-        ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:42:37 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:21:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-  if(chid = ChannelCreate(0)) {
-  ^
-src/des_controller.c:26:42: error: 'serverpid' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                                          ^
-src/des_controller.c:26:42: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-src/des_controller.c:33:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:33:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:33:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-src/des_controller.c:9:6: warning: variable 'coid' set but not used [-Wunused-but-set-variable]
-  int coid;
-      ^
-src/des_controller.c:8:8: warning: variable 'displaypid' set but not used [-Wunused-but-set-variable]
-  pid_t displaypid;
-        ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:43:08 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:21:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  if(chid = ChannelCreate(0) == -1) {
-  ^
-src/des_controller.c:27:42: error: 'serverpid' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                                          ^
-src/des_controller.c:27:42: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c:34:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:34:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:34:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-src/des_controller.c:9:6: warning: variable 'coid' set but not used [-Wunused-but-set-variable]
-  int coid;
-      ^
-src/des_controller.c:8:8: warning: variable 'displaypid' set but not used [-Wunused-but-set-variable]
-  pid_t displaypid;
-        ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:43:15 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:27:42: error: 'serverpid' undeclared (first use in this function)
-  if((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
-                                          ^
-src/des_controller.c:27:42: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-src/des_controller.c:34:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:34:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:34:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-src/des_controller.c:9:6: warning: variable 'coid' set but not used [-Wunused-but-set-variable]
-  int coid;
-      ^
-src/des_controller.c:8:8: warning: variable 'displaypid' set but not used [-Wunused-but-set-variable]
-  pid_t displaypid;
-        ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:43:29 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:34:32: error: 'person' undeclared (first use in this function)
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                ^
-src/des_controller.c:34:32: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-src/des_controller.c:34:65: error: expected expression before '<' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                 ^
-src/des_controller.c:34:68: error: expected statement before ')' token
-   if(rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                                                    ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:43:49 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:34:33: error: 'person' undeclared (first use in this function)
-   if((rcvid = MsgReceive(chid, &person, sizeof( person ), NULL) < 0) {
-                                 ^
-src/des_controller.c:34:33: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-src/des_controller.c:34:70: error: expected ')' before '{' token
-   if((rcvid = MsgReceive(chid, &person, sizeof( person ), NULL) < 0) {
-                                                                      ^
-src/des_controller.c:37:2: error: expected expression before '}' token
-  }
-  ^
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:44:02 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:34:33: error: 'person' undeclared (first use in this function)
-   if((rcvid = MsgReceive(chid, &person, sizeof( person ), NULL)) < 0) {
-                                 ^
-src/des_controller.c:34:33: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c:11:6: warning: variable 'rcvid' set but not used [-Wunused-but-set-variable]
-  int rcvid;
-      ^
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:49:13 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:40:21: error: 'display' undeclared (first use in this function)
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-   if(MsgSend(coid, &display, sizeof(display), NULL, 0) == -1L) {
-                     ^
-src/des_controller.c:40:21: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c:45:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:49:50 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:46:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:46:22: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:50:25 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:48:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:48:22: note: each undeclared identifier is reported only once for each function it appears in
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-20:51:06 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:49:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:49:22: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:51:40 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:50:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:50:22: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:52:19 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'main':
-src/des_controller.c:15:6: warning: unused variable 'rcvid' [-Wunused-variable]
-  int rcvid;
-      ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-20:56:04 **** Build of configuration x86_64-debug for project des_display ****
+make: Nothing to be done for 'all'.
+21:48:17 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-21:08:35 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+21:48:18 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:39:2: error: 'exit' redeclared as different kind of symbol
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-  exit = 11
-  ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:122:13: note: previous declaration of 'exit' was here
- extern void exit(int __status) __attribute__((__noreturn__));
-             ^
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:86:2: error: expected specifier-qualifier-list before 'typedef'
-  typedef enum {
-  ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:21:3: error: called object is not a function or function pointer
-   exit(EXIT_FAILURE);
-   ^
-src/des_inputs.c:28:3: error: called object is not a function or function pointer
-   exit(EXIT_FAILURE);
-   ^
-src/des_inputs.c:37:16: error: 'person' undeclared (first use in this function)
-    scanf("%d", person.personID);
-                ^
-src/des_inputs.c:37:16: note: each undeclared identifier is reported only once for each function it appears in
-src/des_inputs.c:49:4: error: called object is not a function or function pointer
-    exit (EXIT_FAILURE);
-    ^
-src/des_inputs.c:14:6: warning: unused variable 'personID' [-Wunused-variable]
-  int personID = 0;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-21:08:48 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:39:2: error: 'exit' redeclared as different kind of symbol
-  exit = 11
-  ^
-In file included from src/des_inputs.c:2:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdlib.h:122:13: note: previous declaration of 'exit' was here
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
- extern void exit(int __status) __attribute__((__noreturn__));
-             ^
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:86:2: error: expected specifier-qualifier-list before 'typedef'
-  typedef enum {
-  ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:22:3: error: called object is not a function or function pointer
-   exit(EXIT_FAILURE);
-   ^
-src/des_inputs.c:29:3: error: called object is not a function or function pointer
-   exit(EXIT_FAILURE);
-   ^
-src/des_inputs.c:50:4: error: called object is not a function or function pointer
-    exit (EXIT_FAILURE);
-    ^
-src/des_inputs.c:14:6: warning: unused variable 'personID' [-Wunused-variable]
-  int personID = 0;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-21:09:26 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:39:2: error: redeclaration of enumerator 'EXIT'
-  EXIT = 11
-  ^
-src/des-mva.h:21:2: note: previous definition of 'EXIT' was here
-  EXIT = 7
-  ^
-src/des-mva.h:86:2: error: expected specifier-qualifier-list before 'typedef'
-  typedef enum {
-  ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:14:6: warning: unused variable 'personID' [-Wunused-variable]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-  int personID = 0;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-21:11:01 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-In file included from src/des_inputs.c:7:0:
-src/des-mva.h:86:2: error: expected specifier-qualifier-list before 'typedef'
-  typedef enum {
-  ^
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:14:6: warning: unused variable 'personID' [-Wunused-variable]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_inputs.o' failed
-  int personID = 0;
-      ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_inputs.o] Error 1
-21:12:01 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-src/des_inputs.c: In function 'main':
-src/des_inputs.c:14:6: warning: unused variable 'personID' [-Wunused-variable]
-  int personID = 0;
-      ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-21:16:48 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make: Nothing to be done for 'all'.
+21:48:51 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:48:52 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:48:52 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:49:20 **** Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-21:19:11 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:16:21: error: 'display' undeclared (first use in this function)
-   MsgReceive(chid, &display, sizeof(display), NULL);
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-                     ^
-src/des_display.c:16:21: note: each undeclared identifier is reported only once for each function it appears in
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-21:19:24 **** Incremental Build of configuration x86_64-debug for project des_display ****
+21:49:20 **** Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-21:23:45 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+21:49:20 **** Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:27:41 **** Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:27:41 **** Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:18:8: error: assignment to expression with array type
-   rMsg = MsgReceive(chid, &display, sizeof(display), NULL);
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-        ^
-src/des_display.c:23:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-       ^
-src/des_display.c:23:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:23:20: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:33:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:33:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:27:42 **** Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:28:03 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:18:8: error: assignment to expression with array type
-   rMsg = MsgReceive(chid, &display, sizeof(display), NULL);
-        ^
-src/des_display.c:23:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-       ^
-src/des_display.c:23:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:23:20: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:33:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:33:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:28:11 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:28:12 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:18:8: error: assignment to expression with array type
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-   rMsg = MsgReceive(chid, &display, sizeof(display), NULL);
-        ^
-src/des_display.c:23:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-       ^
-src/des_display.c:23:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:23:20: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:33:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:33:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:28:12 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:28:32 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+21:50:33 **** Clean-only build of configuration x86_64-debug for project des_controller ****
 make -j7 clean 
 rm -fr build/x86_64-debug
-20:28:32 **** Clean-only build of configuration x86_64-debug for project des_display ****
+21:50:33 **** Clean-only build of configuration x86_64-debug for project des_display ****
 make -j7 clean 
 rm -fr build/x86_64-debug
-20:28:32 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+21:50:33 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
 make -j7 clean 
 rm -fr build/x86_64-debug
-20:28:37 **** Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:18:8: error: assignment to expression with array type
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-   rMsg = MsgReceive(chid, &display, sizeof(display), NULL);
-        ^
-src/des_display.c:23:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-       ^
-src/des_display.c:23:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:23:20: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:33:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:33:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:31:19 **** Build of configuration x86_64-debug for project des_controller ****
+21:50:37 **** Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:31:19 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:26:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-       ^
-src/des_display.c:26:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:26:20: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:36:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:36:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:31:19 **** Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:32:47 **** Clean-only build of configuration x86_64-debug for project des_controller ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:32:47 **** Clean-only build of configuration x86_64-debug for project des_display ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:32:47 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:32:50 **** Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:32:51 **** Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:26:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-       ^
-src/des_display.c:26:20: error: 'inMessages' undeclared (first use in this function)
-   if (strcmp(rMsg, inMessages[LS_INPUT]) == 0
-                    ^
-src/des_display.c:26:20: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-src/des_display.c:36:19: error: 'outMessages' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                   ^
-src/des_display.c:36:31: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessages[OUTPUT]);
-                               ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:32:51 **** Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:33:14 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:33:14 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:26:7: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
-   if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
-       ^
-src/des_display.c:27:21: error: 'inMessages' undeclared (first use in this function)
-     || strcmp(rMsg, inMessages[RS_INPUT]) == 0) {
-                     ^
-src/des_display.c:27:21: note: each undeclared identifier is reported only once for each function it appears in
-src/des_display.c:36:30: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessage[OUTPUT]);
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-                              ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:33:14 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:33:34 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:27:14: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
-              ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:28:15: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-     || strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
-               ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:19: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                   ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:25: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                         ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'int'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:37:30: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessage[OUTPUT]);
-                              ^
-src/des_display.c:37:30: note: each undeclared identifier is reported only once for each function it appears in
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:33:38 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:33:39 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:27:14: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
-              ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:28:15: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-     || strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
-               ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:19: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                   ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:25: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                         ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'int'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:37:30: error: 'OUTPUT' undeclared (first use in this function)
-    printf("%s\n", outMessage[OUTPUT]);
-                              ^
-src/des_display.c:37:30: note: each undeclared identifier is reported only once for each function it appears in
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_display.o] Error 1
-20:33:39 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:34:36 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:34:36 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:27:14: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
-              ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:28:15: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-     || strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
-               ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:19: warning: passing argument 1 of 'strcmp' from incompatible pointer type [-Wincompatible-pointer-types]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                   ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'char **'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-src/des_display.c:32:25: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                         ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'int'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-20:34:36 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:35:08 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:35:08 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-src/des_display.c: In function 'main':
-src/des_display.c:32:25: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast [-Wint-conversion]
-   else if (strcmp(rMsg, inMessage[WS_INPUT] == 0)) {
-                         ^
-In file included from src/des_display.c:5:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/string.h:74:12: note: expected 'const char *' but argument is of type 'int'
- extern int strcmp(const char *__s1, const char *__s2);
-            ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-20:35:08 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:35:32 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'scan_state':
-src/des_controller.c:41:11: error: incompatible types when assigning to type 'State {aka enum <anonymous>}' from type 'void *'
-  p->state = NULL;
-           ^
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-            ^
-src/des_controller.c:152:22: error: 'EOK' undeclared (first use in this function)
-   if(MsgReply(rcvid, EOK, NULL, 0) == -1) {
-                      ^
-src/des_controller.c:152:22: note: each undeclared identifier is reported only once for each function it appears in
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
-make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-20:35:32 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-20:35:32 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:45:30 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:56:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:73:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:87:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:100:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:121:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-20:45:30 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:45:30 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:48:28 **** Clean-only build of configuration x86_64-debug for project des_controller ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:48:28 **** Clean-only build of configuration x86_64-debug for project des_display ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:48:28 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-20:57:08 **** Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:63:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:81:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:95:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:108:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:126:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:115:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-20:57:08 **** Build of configuration x86_64-debug for project des_display ****
+21:50:38 **** Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-20:57:09 **** Build of configuration x86_64-debug for project des_inputs ****
+21:50:38 **** Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-20:59:40 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+21:54:11 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:54:11 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:54:11 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+21:54:15 **** Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:64:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:82:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:96:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:109:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:127:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:116:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-20:59:40 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-20:59:40 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-21:02:51 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'unlock_state':
-src/des_controller.c:64:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'open_state':
-src/des_controller.c:82:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'lock_state':
-src/des_controller.c:96:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'close_state':
-src/des_controller.c:109:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-  display->outMessage = NULL;
-                      ^
-src/des_controller.c: In function 'main':
-src/des_controller.c:127:9: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
-  printf(SCAN_STATE);
-         ^
-In file included from src/des_controller.c:1:0:
-/Users/sydney/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'int'
- extern int printf(const char *__format, ...);
-            ^
-src/des_controller.c: In function 'exit_state':
-src/des_controller.c:116:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-21:02:51 **** Incremental Build of configuration x86_64-debug for project des_display ****
+21:54:15 **** Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-21:02:51 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+21:54:15 **** Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+21:54:46 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:54:46 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+21:54:46 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:59:38 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:59:38 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+src/des_display.c: In function 'main':
+src/des_display.c:43:29: error: 'rmsg' undeclared (first use in this function)
+   if (MsgReply(rcvid, EOK, &rmsg, sizeof(rmsg)) == -1) {
+                             ^
+src/des_display.c:43:29: note: each undeclared identifier is reported only once for each function it appears in
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_display.o] Error 1
+21:59:39 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+21:59:58 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+22:01:28 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:01:28 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:01:28 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:01:31 **** Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+22:01:32 **** Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+22:01:32 **** Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+22:07:34 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:07:34 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:07:35 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+22:07:35 **** Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+22:07:35 **** Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+22:07:35 **** Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+22:07:38 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+22:07:38 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+22:07:38 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.

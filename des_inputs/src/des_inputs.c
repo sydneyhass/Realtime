@@ -10,7 +10,7 @@ void displayMenu();
 
 int main(int argc, char* argv[]) {
 	int coid;
-	char userInput[4];
+	char userInput[6];
 	pid_t serverpid;
 	Person person;
 
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
 	if ((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0))
 			== -1) {
-		fprintf(stderr, "ConnectAttach error\n");
+		fprintf(stderr, "Inputs ConnectAttach error\n");
 		perror(NULL);
 		exit(EXIT_FAILURE);
 	}
@@ -31,16 +31,17 @@ int main(int argc, char* argv[]) {
 	while (1) {
 		displayMenu();
 		scanf("%s", userInput);
-		if (strcmp(userInput, inMessage[LS_INPUT]) == 0
-				|| strcmp(userInput, inMessage[RS_INPUT]) == 0) {
+		printf("User Input: %s == %s", userInput, inMessage[LS_INPUT]);
+		if ((strcmp(userInput, inMessage[LS_INPUT]) == 0)
+				|| (strcmp(userInput, inMessage[RS_INPUT]) == 0)) {
 			printf("Enter your ID: ");
-			scanf("%d", person.personID);
+			scanf("%d", &person.personID);
 			person.direction = INBOUND;
 			person.state = SCAN_STATE;
 		}
 		else if(strcmp(userInput, inMessage[WS_INPUT]) == 0) {
 			printf("Enter your weight: ");
-			scanf("%d", person.weight);
+			scanf("%d", &person.weight);
 			person.direction = OUTBOUND;
 			person.state = SCAN_STATE;
 		}
@@ -60,13 +61,13 @@ int main(int argc, char* argv[]) {
 			person.state = EXIT_STATE;
 		}
 		if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
-			fprintf (stderr, "MsgSend had an error\n");
+			fprintf (stderr, "Inputs MsgSend had an error\n");
 			exit (EXIT_FAILURE);
 		}
 	}
 
 	if (ConnectDetach(coid) == -1) {
-		perror("ConnectDetach error.");
+		perror("Inputs ConnectDetach error.");
 		exit(EXIT_FAILURE);
 	}
 

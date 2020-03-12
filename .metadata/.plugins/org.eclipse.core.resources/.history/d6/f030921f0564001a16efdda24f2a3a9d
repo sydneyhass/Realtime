@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/neutrino.h>
+#include <sys/netmgr.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+#include "../../des_inputs/src/des-mva.h"
+
+int main(void) {
+	int chid;
+	char rMsg[256];
+	int rcvid;
+	Display display;
+
+	printf("The display is running as PID: %d", getpid());
+
+	if ((chid = ChannelCreate(0)) == -1) {
+		perror("Display ChannelCreate error.");
+		exit(EXIT_FAILURE);
+	}
+
+	while (1) {
+		if ((rcvid = MsgReceive(chid, &display, sizeof(display), NULL)) < 0) {
+			perror("Display MsgRecieve error.");
+			exit(EXIT_FAILURE);
+		}
+
+		if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
+				|| strcmp(rMsg, inMessage[RS_INPUT]) == 0) {
+			printf("Person scanned ID, ID = %d\n", display.person.personID);
+		}
+
+		else if (strcmp(rMsg, inMessage[WS_INPUT]) == 0) {
+			printf("Person weighed, weight = %d\n", display.person.weight);
+		}
+
+		else {
+			printf("%s\n", outMessage[0]);
+		}
+		if (MsgReply(rcvid, EOK, &rmsg, sizeof(rmsg)) == -1) {
+			perror("MsgReply error.");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	if (ChannelDestroy(chid) == -1) {
+		perror("Display ChannelDestroy error.");
+		exit(EXIT_FAILURE);
+	}
+
+	return EXIT_SUCCESS;
+}
