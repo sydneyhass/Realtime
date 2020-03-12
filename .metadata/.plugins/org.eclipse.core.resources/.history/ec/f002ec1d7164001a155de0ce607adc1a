@@ -1,0 +1,102 @@
+/*
+ * des.h
+ *
+ *  Created on: Sep 28, 2019
+ *      Author: hurdleg
+ *  Modified on: Mar 5, 2020
+ *  	Modified by: Connor Davidson and Sydney Hass
+ */
+
+#ifndef DOOR_ENTRY_SYSTEM_H_
+#define DOOR_ENTRY_SYSTEM_H_
+
+#define NUM_STATES 7	// where n = number of states in your finite state machine (FSM)
+typedef enum {
+	START_STATE = 0,
+	SCAN_STATE = 1,
+	UNLOCK_STATE = 2,
+	OPEN_STATE = 3,
+	LOCK_STATE = 4,
+	CLOSE_STATE = 6,
+	EXIT_STATE = 7
+} State;
+
+#define NUM_INPUTS 12	// where n equals the number of input commands that drive the FSM.
+			// From the assignment specification, notice the prompt. Each command, ls, rs, etc.
+			// Count those...
+typedef enum {
+	LS_INPUT = 0,
+	RS_INPUT = 1,
+	WS_INPUT = 2,
+	GRU_INPUT = 3,
+	GLU_INPUT = 4,
+	LO_INPUT = 5,
+	RO_INPUT = 6,
+	LC_INPUT = 7,
+	RC_INPUT = 8,
+	GRL_INPUT = 9,
+	GLL_INPUT = 10,
+	EXIT_INPUT = 11
+} Input;
+
+const char *inMessage[NUM_INPUTS] = {
+	"ls",
+	"rs",
+	"ws",
+	"gru",
+	"glu",
+	"lo",
+	"ro",
+	"lc",
+	"rc",
+	"grl",
+	"gll",
+	"exit"
+};
+
+#define NUM_OUTPUTS 10	// where n equals the number of outputs messages from the FSM.
+typedef enum {
+	GLU_MSG = 0,
+	GRU_MSG = 1,
+	LO_MSG = 2,
+	RO_MSG = 3,
+	LC_MSG = 4,
+	RC_MSG = 5,
+	GLL_MSG = 6,
+	GRL_MSG = 7,
+	WAIT_MSG = 8,
+	ERR_MSG = 9
+} Output;
+
+const char *outMessage[NUM_OUTPUTS] = {
+	"Left door unlocked by Guard",
+	"Right door unlocked by Guard",
+	"Person opened left door",
+	"Person opened right door",
+	"Left door closed (automatically)",
+	"Right door closed (automatically)",
+	"Left door locked by Guard",
+	"Right door locked by Guard",
+	"Waiting for person...",
+	"Error! Command not recognized"
+};
+
+// inputs client sends a Person struct to its server, the controller
+typedef struct {
+	char msg[5];
+	int personID;
+	int weight;
+	enum {
+		INBOUND = 0,
+		OUTBOUND = 1
+	} direction;
+	State state;
+} Person;
+
+// controller client sends a Display struct to its server, the display
+typedef struct {
+	Output outMessage;
+	Person person;
+} Display;
+
+#endif /* DOOR_ENTRY_SYSTEM_H_ */

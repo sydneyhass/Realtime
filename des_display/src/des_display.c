@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "../../des_inputs/src/des-mva.h"
+#include "../../des_controller/src/des-mva.h"
 
 int main(void) {
 	int chid;
@@ -17,13 +17,15 @@ int main(void) {
 
 	printf("The display is running as PID: %d", getpid());
 
-	if ((chid = ChannelCreate(1)) == -1) {
+	if ((chid = ChannelCreate(0)) == -1) {
 		perror("Display ChannelCreate error.");
 		exit(EXIT_FAILURE);
 	}
 
+
 	while (1) {
-		if ((rcvid = MsgReceive(chid, &display, sizeof(display), NULL)) < 0) {
+
+		if ((rcvid = MsgReceive(chid, display, sizeof(display), NULL)) < 0) {
 			perror("Display MsgRecieve error.");
 			exit(EXIT_FAILURE);
 		}

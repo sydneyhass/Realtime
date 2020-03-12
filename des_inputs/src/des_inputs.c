@@ -4,13 +4,13 @@
 #include <sys/neutrino.h>
 #include <sys/netmgr.h>
 
-#include "des-mva.h"
+#include "../../des_controller/src/des-mva.h"
 
 void displayMenu();
 
 int main(int argc, char* argv[]) {
 	int coid;
-	pid_t serverpid;
+	pid_t controllerpid;
 	Person person;
 
 	if (argc != 2) {
@@ -18,10 +18,10 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	serverpid = atoi(argv[1]);
+	controllerpid = atoi(argv[1]);
 
-	if ((coid = ConnectAttach(ND_LOCAL_NODE, serverpid, 1, _NTO_SIDE_CHANNEL, 0))
-			== -1) {
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, controllerpid, 0,
+			_NTO_SIDE_CHANNEL, 0)) == -1) {
 		fprintf(stderr, "Inputs ConnectAttach error\n");
 		perror(NULL);
 		exit(EXIT_FAILURE);
@@ -36,32 +36,15 @@ int main(int argc, char* argv[]) {
 			printf("Enter your ID: ");
 			scanf("%d", &person.personID);
 			person.direction = INBOUND;
-			person.state = SCAN_STATE;
-		}
-		else if(strcmp(person.msg, inMessage[WS_INPUT]) == 0) {
+		} else if (strcmp(person.msg, inMessage[WS_INPUT]) == 0) {
 			printf("Enter your weight: ");
 			scanf("%d", &person.weight);
+
 			person.direction = OUTBOUND;
-			person.state = SCAN_STATE;
 		}
-		else if(strcmp(person.msg, inMessage[GLU_INPUT]) == 0 || strcmp(person.msg, inMessage[GRU_INPUT]) == 0) {
-			person.state = UNLOCK_STATE;
-		}
-		else if(strcmp(person.msg, inMessage[LC_INPUT]) == 0 || strcmp(person.msg, inMessage[RC_INPUT]) == 0) {
-			person.state = CLOSE_STATE;
-		}
-		else if(strcmp(person.msg, inMessage[GLL_INPUT]) == 0 || strcmp(person.msg, inMessage[GRL_INPUT]) == 0) {
-			person.state = LOCK_STATE;
-		}
-		else if(strcmp(person.msg, inMessage[RO_INPUT]) == 0 || strcmp(person.msg, inMessage[LO_INPUT]) == 0) {
-			person.state = OPEN_STATE;
-		}
-		else if(strcmp(person.msg, inMessage[EXIT_INPUT]) == 0) {
-			person.state = EXIT_STATE;
-		}
-		if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
-			fprintf (stderr, "Inputs MsgSend had an error\n");
-			exit (EXIT_FAILURE);
+		if (MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
+			fprintf(stderr, "Inputs MsgSend had an error\n");
+			exit(EXIT_FAILURE);
 		}
 	}
 

@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "../../des_inputs/src/des-mva.h"
+#include "des-mva.h"
 
 typedef void *(*StateFunc)();
 
@@ -119,6 +119,7 @@ int main(int argc, char* argv[]) {
 
 	StateFunc statefunc = start_state;
 
+
 	if (argc != 2) {
 		fprintf(stderr, "Wrong number of arguments\n");
 		exit(EXIT_FAILURE);
@@ -126,19 +127,18 @@ int main(int argc, char* argv[]) {
 
 	displaypid = atoi(argv[1]);
 
-	printf("The controller is running as pid: %d", getpid());
-
 	if ((chid = ChannelCreate(0)) == -1) {
 		fprintf(stderr, "Controller error creating channel");
 		exit(EXIT_FAILURE);
 	}
 
-	//TODO: Attach to display - need nid, chid, coid
-	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, 1, _NTO_SIDE_CHANNEL, 0)) == -1) {
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, chid, _NTO_SIDE_CHANNEL, 0)) == -1) {
 		fprintf(stderr, "Controller ConnectAttach error\n");
 		perror(NULL);
 		exit(EXIT_FAILURE);
 	}
+
+	printf("The controller is running as PID %d", getpid());
 
 	while (1) {
 		if ((rcvid = MsgReceive(chid, &person, sizeof(person), NULL)) < 0) {
@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
 
 		// Add person to display struct
 		display.person = person;
-		if (MsgSend(displaypid, &display, sizeof(display), NULL, 0) == -1) {
+		if (MsgSend(coid, &display, sizeof(display), NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}
@@ -167,8 +167,14 @@ int main(int argc, char* argv[]) {
 
 	}
 
-	ConnectDetach(coid);
-	ChannelDestroy(chid);
+	if(ConnectDetach(coid) == -1) {
+		perror("Controller ConnectDetach error.");
+		exit(EXIT_FAILURE);
+	}
+	if(ChannelDestroy(chid) == -1) {
+		perror("Controller ChannelDestory error.");
+		exit(EXIT_FAILURE);
+	}
 
 	return EXIT_SUCCESS;
 }
