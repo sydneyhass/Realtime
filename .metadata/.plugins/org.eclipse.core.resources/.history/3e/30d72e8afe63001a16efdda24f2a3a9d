@@ -38,12 +38,25 @@ int main(int argc, char* argv[]) {
 			person.direction = INBOUND;
 			person.state = SCAN_STATE;
 		}
+<<<<<<< HEAD
+		if (strcmp(userInput, inMessage[WS_INPUT]) == 0) {
+=======
 		else if(strcmp(userInput, inMessage[WS_INPUT]) == 0) {
+>>>>>>> 412527de62eb0adaba955e12621ea364795466b4
 			printf("Enter your weight: ");
 			scanf("%d", person.weight);
 			person.direction = OUTBOUND;
 			person.state = SCAN_STATE;
 		}
+<<<<<<< HEAD
+		if (strcmp(userInput, inMessage[EXIT_INPUT]) == 0) {
+			break;
+		}
+
+		if (MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
+			fprintf(stderr, "MsgSend had an error\n");
+			exit(EXIT_FAILURE);
+=======
 		else if(strcmp(userInput, inMessage[GLU_INPUT]) == 0 || strcmp(userInput, inMessage[GRU_INPUT]) == 0) {
 			person.state = UNLOCK_STATE;
 		}
@@ -62,6 +75,7 @@ int main(int argc, char* argv[]) {
 		if(MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
 			fprintf (stderr, "MsgSend had an error\n");
 			exit (EXIT_FAILURE);
+>>>>>>> 412527de62eb0adaba955e12621ea364795466b4
 		}
 	}
 
