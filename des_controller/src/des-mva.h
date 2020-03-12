@@ -83,7 +83,7 @@ const char *outMessage[NUM_OUTPUTS] = {
 
 // inputs client sends a Person struct to its server, the controller
 typedef struct {
-	char msg[5];
+	char msg[256];
 	int personID;
 	int weight;
 	enum {
@@ -96,7 +96,7 @@ typedef struct {
 // controller client sends a Display struct to its server, the display
 typedef struct {
 	Output outMessage;
-	Person person;
+	Person *person;
 } Display;
 
 #endif /* DOOR_ENTRY_SYSTEM_H_ */

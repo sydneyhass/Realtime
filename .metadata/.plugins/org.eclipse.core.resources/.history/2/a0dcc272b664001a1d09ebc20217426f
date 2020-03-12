@@ -1,0 +1,191 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/neutrino.h>
+#include <sys/types.h>
+#include <sys/netmgr.h>
+#include <unistd.h>
+#include <errno.h>
+
+#include "des-mva.h"
+
+typedef void *(*StateFunc)();
+
+//state function pointers
+void *start_state(Person *p, Display *display);
+void *scan_state(Person *p, Display *display);
+void *unlock_state(Person *p, Display *display);
+void *open_state(Person *p, Display *display);
+void *lock_state(Person *p, Display *display);
+void *close_state(Person *p, Display *display);
+
+void *start_state(Person *p, Display *display) {
+	// Check for scan state, no message made as display creates it
+	if (strcmp(p->msg, inMessage[LS_INPUT]) == 0 || strcmp(p->msg, inMessage[RS_INPUT]) == 0){
+		p->state = SCAN_STATE;
+		return scan_state;
+	}
+	if(strcmp(p->msg, inMessage[EXIT_INPUT]) == 0) {
+		display->outMessage = WAIT_MSG;
+	}
+	// Invalid state, make person state start for the purpose of display
+	// return no message, console would just display menu again
+	p->state = START_STATE;
+	return start_state;
+}
+
+void *scan_state(Person *p, Display *display) {
+	if (strcmp(p->msg, inMessage[GLU_INPUT]) == 0) {
+		display->outMessage = GLU_MSG;
+		return unlock_state;
+	}
+	if (strcmp(p->msg, inMessage[GRU_INPUT]) == 0) {
+		display->outMessage = GRU_MSG;
+		return unlock_state;
+	}
+	// if close from scan, close starting door
+	if (strcmp(p->msg, inMessage[LC_INPUT]) == 0) {
+		display->outMessage = LC_MSG;
+		return close_state;
+	}
+	if (strcmp(p->msg, inMessage[RC_INPUT]) == 0) {
+		display->outMessage = RC_MSG;
+		return close_state;
+	}
+	p->state = START_STATE;
+	return scan_state;
+}
+
+void *unlock_state(Person *p, Display *display) {
+
+	// If person state is open, left open and progress to open state
+	if (strcmp(p->msg, inMessage[LO_INPUT]) == 0) {
+		display->outMessage = LO_MSG;
+		return open_state;
+	}
+	if (strcmp(p->msg, inMessage[RO_INPUT]) == 0) {
+		display->outMessage = RO_MSG;
+		return open_state;
+	}
+	// No output message and remain in unlock state
+	display->outMessage = ERR_MSG;
+	return unlock_state;
+
+}
+
+void *open_state(Person *p, Display *display) {
+	//Person will be scan state when being weighed, let display make message
+	if (strcmp(p->msg, inMessage[WS_INPUT]) == 0){
+		p->state = SCAN_STATE;
+		return scan_state;
+	}
+	//Close left if inbound, right if outbound
+	if (strcmp(p->msg, inMessage[LC_INPUT]) == 0){
+		display->outMessage = LC_MSG;
+		return close_state;
+	}
+	if (strcmp(p->msg, inMessage[RC_INPUT]) == 0){
+		display->outMessage = RC_MSG;
+		return close_state;
+	}
+	display->outMessage = ERR_MSG;
+	return open_state;
+}
+
+void *lock_state(Person *p, Display *display) {
+	// Unlock r if inbound
+	if (strcmp(p->msg, inMessage[GRU_INPUT]) == 0){
+		display->outMessage = GRU_MSG;
+		return unlock_state;
+	}
+	if (strcmp(p->msg, inMessage[GLU_INPUT]) == 0){
+		display->outMessage = GLU_MSG;
+		return unlock_state;
+	}
+	display->outMessage = ERR_MSG;
+	return lock_state;
+}
+
+void *close_state(Person *p, Display *display) {
+	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0){
+		display->outMessage = GLL_MSG;
+		return lock_state;
+	}
+	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0){
+		display->outMessage = GRL_MSG;
+		return lock_state;
+	}
+	display->outMessage = ERR_MSG;
+	return close_state;
+}
+
+int main(int argc, char* argv[]) {
+	pid_t displaypid;
+	int coid;
+	int chid;
+	int rcvid;
+	Person person;
+	Display display;
+
+	StateFunc statefunc = start_state;
+
+
+	if (argc != 2) {
+		fprintf(stderr, "Wrong number of arguments\n");
+		exit(EXIT_FAILURE);
+	}
+
+	displaypid = atoi(argv[1]);
+
+	if ((chid = ChannelCreate(0)) == -1) {
+		fprintf(stderr, "Controller error creating channel\n");
+		exit(EXIT_FAILURE);
+	}
+
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, chid, _NTO_SIDE_CHANNEL, 0)) == -1) {
+		fprintf(stderr, "Controller ConnectAttach error\n");
+		perror(NULL);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("The controller is running as PID %d\n", getpid());
+
+	while (1) {
+		if ((rcvid = MsgReceive(chid, &person, sizeof(Person) + 1, NULL)) < 0) {
+			perror("Controller's MsgReceive error.\n");
+			return EXIT_FAILURE;
+		}
+
+		// Call state and assign next state
+		statefunc = (StateFunc) (*statefunc)(&person, &display);
+
+		// Add person to display struct
+
+		display.person = person;
+		if (MsgSend(coid, &display, sizeof(Display) + 1, NULL, 0) == -1) {
+			fprintf(stderr, "Controller's MsgSend had an error\n");
+			exit(EXIT_FAILURE);
+		}
+
+		if (MsgReply(rcvid, EOK, NULL, 0) == -1) {
+			perror("Controller's MsgReply error.\n");
+			exit(EXIT_FAILURE);
+		}
+
+		// Can just break here as above msgSend will send person.state = exit to Display which will trigger break condition there
+		if (person.state == EXIT_STATE)
+			break;
+
+	}
+
+	if(ConnectDetach(coid) == -1) {
+		perror("Controller ConnectDetach error.\n");
+		exit(EXIT_FAILURE);
+	}
+	if(ChannelDestroy(chid) == -1) {
+		perror("Controller ChannelDestory error.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	return EXIT_SUCCESS;
+}

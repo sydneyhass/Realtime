@@ -127,6 +127,7 @@ int main(int argc, char* argv[]) {
 	Person person;
 	Display display;
 
+	display.outMessage = WAIT_MSG;
 	StateFunc statefunc = start_state;
 
 
@@ -151,17 +152,20 @@ int main(int argc, char* argv[]) {
 	printf("The controller is running as PID %d\n", getpid());
 
 	while (1) {
-		if ((rcvid = MsgReceive(chid, &person, sizeof(Person), NULL)) < 0) {
+		if ((rcvid = MsgReceive(chid, &person, sizeof(Person) + 1, NULL)) < 0) {
 			perror("Controller's MsgReceive error.\n");
 			return EXIT_FAILURE;
 		}
+
+		if(strcmp(person.msg, inMessage[EXIT_INPUT]) == 0)
+			person.state = EXIT_STATE;
 
 		// Call state and assign next state
 		statefunc = (StateFunc) (*statefunc)(&person, &display);
 
 		// Add person to display struct
-		display.person = person;
-		if (MsgSend(coid, &display, sizeof(display) + 1, NULL, 0) == -1) {
+		display.person = &person;
+		if (MsgSend(coid, &display, sizeof(Display) + 1, NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}

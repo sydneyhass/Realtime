@@ -1,146 +1,193 @@
-16:09:45 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-16:13:28 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+19:11:36 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-16:13:28 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:13:29 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:13:53 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-16:13:57 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:13:57 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:13:57 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:23:04 **** Clean-only build of configuration x86_64-debug for project des_controller ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-16:23:04 **** Clean-only build of configuration x86_64-debug for project des_display ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-16:23:05 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-16:23:05 **** Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'start_state':
-src/des_controller.c:29:3: error: 'display' undeclared (first use in this function)
-   display->outMessage = WAIT_MSG;
+src/des_controller.c: In function 'main':
+src/des_controller.c:163:3: error: invalid type argument of unary '*' (have 'Person {aka struct <anonymous>}')
+   *display.person = malloc( sizeof( Node ) );
    ^
-src/des_controller.c:29:3: note: each undeclared identifier is reported only once for each function it appears in
+src/des_controller.c:163:37: error: 'Node' undeclared (first use in this function)
+   *display.person = malloc( sizeof( Node ) );
+                                     ^
+src/des_controller.c:163:37: note: each undeclared identifier is reported only once for each function it appears in
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
 cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
 make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
-16:23:05 **** Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-16:23:05 **** Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-16:23:07 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+19:11:41 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c: In function 'start_state':
-src/des_controller.c:29:3: error: 'display' undeclared (first use in this function)
-   display->outMessage = WAIT_MSG;
+src/des_controller.c: In function 'main':
+src/des_controller.c:163:3: error: invalid type argument of unary '*' (have 'Person {aka struct <anonymous>}')
+   *display.person = malloc( sizeof( Person ) );
    ^
-src/des_controller.c:29:3: note: each undeclared identifier is reported only once for each function it appears in
-Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
 cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
 make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-16:23:08 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:23:08 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-16:23:49 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
+19:12:19 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-src/des_controller.c:22:7: error: conflicting types for 'start_state'
- void *start_state(Person *p, Display *display) {
-       ^
-src/des_controller.c:15:7: note: previous declaration of 'start_state' was here
- void *start_state(Person *p);
-       ^
+src/des_controller.c: In function 'main':
+src/des_controller.c:163:19: error: lvalue required as left operand of assignment
+   &display.person = malloc( sizeof( Person ) );
+                   ^
 cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
 Makefile:55: recipe for target 'build/x86_64-debug/src/des_controller.o' failed
 make: *** [build/x86_64-debug/src/des_controller.o] Error 1
-16:25:01 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+19:16:25 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-16:25:01 **** Incremental Build of configuration x86_64-debug for project des_display ****
+19:16:44 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 make: Nothing to be done for 'all'.
-16:25:01 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-18:36:23 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-18:36:23 **** Incremental Build of configuration x86_64-debug for project des_display ****
+19:16:44 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-18:36:24 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
-make -j7 all 
-make: Nothing to be done for 'all'.
-18:39:46 **** Incremental Build of configuration x86_64-debug for project des_controller ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-18:39:46 **** Incremental Build of configuration x86_64-debug for project des_display ****
-make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-18:39:46 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+src/des_display.c: In function 'main':
+src/des_display.c:30:28: error: request for member 'msg' in something not a structure or union
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
+   if (strcmp(display.person.msg, inMessage[LS_INPUT]) == 0
+                            ^
+src/des_display.c:31:29: error: request for member 'msg' in something not a structure or union
+     || strcmp(display.person.msg, inMessage[RS_INPUT]) == 0) {
+                             ^
+src/des_display.c:32:57: error: request for member 'personID' in something not a structure or union
+    printf("Person scanned ID, ID = %d\n", display.person.personID);
+                                                         ^
+src/des_display.c:35:33: error: request for member 'msg' in something not a structure or union
+   else if (strcmp(display.person.msg, inMessage[WS_INPUT]) == 0) {
+                                 ^
+src/des_display.c:36:58: error: request for member 'weight' in something not a structure or union
+    printf("Person weighed, weight = %d\n", display.person.weight);
+                                                          ^
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_display.o] Error 1
+19:16:44 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-18:39:51 **** Clean-only build of configuration x86_64-debug for project des_controller ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-18:39:51 **** Clean-only build of configuration x86_64-debug for project des_display ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-18:39:51 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
-make -j7 clean 
-rm -fr build/x86_64-debug
-18:39:51 **** Build of configuration x86_64-debug for project des_controller ****
+19:16:56 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
-18:39:51 **** Build of configuration x86_64-debug for project des_display ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+src/des_display.c: In function 'main':
+src/des_display.c:30:21: error: invalid type argument of '->' (have 'Display {aka struct <anonymous>}')
+   if (strcmp(display->person.msg, inMessage[LS_INPUT]) == 0
+                     ^
+src/des_display.c:31:29: error: request for member 'msg' in something not a structure or union
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
+     || strcmp(display.person.msg, inMessage[RS_INPUT]) == 0) {
+                             ^
+src/des_display.c:32:57: error: request for member 'personID' in something not a structure or union
+    printf("Person scanned ID, ID = %d\n", display.person.personID);
+                                                         ^
+src/des_display.c:35:33: error: request for member 'msg' in something not a structure or union
+   else if (strcmp(display.person.msg, inMessage[WS_INPUT]) == 0) {
+                                 ^
+src/des_display.c:36:58: error: request for member 'weight' in something not a structure or union
+    printf("Person weighed, weight = %d\n", display.person.weight);
+                                                          ^
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_display.o] Error 1
+19:17:26 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+19:17:27 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+src/des_display.c: In function 'main':
+src/des_display.c:30:21: error: invalid type argument of '->' (have 'Display {aka struct <anonymous>}')
+   if (strcmp(display->person.msg, inMessage[LS_INPUT]) == 0
+                     ^
+src/des_display.c:31:22: error: invalid type argument of '->' (have 'Display {aka struct <anonymous>}')
+     || strcmp(display->person.msg, inMessage[RS_INPUT]) == 0) {
+                      ^
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
+src/des_display.c:32:57: error: request for member 'personID' in something not a structure or union
+    printf("Person scanned ID, ID = %d\n", display.person.personID);
+                                                         ^
+src/des_display.c:35:33: error: request for member 'msg' in something not a structure or union
+   else if (strcmp(display.person.msg, inMessage[WS_INPUT]) == 0) {
+                                 ^
+src/des_display.c:36:58: error: request for member 'weight' in something not a structure or union
+    printf("Person weighed, weight = %d\n", display.person.weight);
+                                                          ^
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_display.o] Error 1
+19:17:27 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+19:17:54 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+src/des_display.c: In function 'main':
+src/des_display.c:32:57: error: request for member 'personID' in something not a structure or union
+    printf("Person scanned ID, ID = %d\n", display.person.personID);
+                                                         ^
+Makefile:55: recipe for target 'build/x86_64-debug/src/des_display.o' failed
+src/des_display.c:35:33: error: request for member 'msg' in something not a structure or union
+   else if (strcmp(display.person.msg, inMessage[WS_INPUT]) == 0) {
+                                 ^
+src/des_display.c:36:58: error: request for member 'weight' in something not a structure or union
+    printf("Person weighed, weight = %d\n", display.person.weight);
+                                                          ^
+cc: /Users/sydney/qnx700/host/darwin/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 error 1
+make: *** [build/x86_64-debug/src/des_display.o] Error 1
+19:18:10 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
-18:39:52 **** Build of configuration x86_64-debug for project des_inputs ****
+19:18:16 **** Clean-only build of configuration x86_64-debug for project des_controller ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+19:18:17 **** Clean-only build of configuration x86_64-debug for project des_display ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+19:18:17 **** Clean-only build of configuration x86_64-debug for project des_inputs ****
+make -j7 clean 
+rm -fr build/x86_64-debug
+19:18:17 **** Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+19:18:17 **** Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+19:18:17 **** Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
-18:39:54 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+19:18:20 **** Incremental Build of configuration x86_64-debug for project des_controller ****
 make -j7 all 
 make: Nothing to be done for 'all'.
-18:39:54 **** Incremental Build of configuration x86_64-debug for project des_display ****
+19:18:20 **** Incremental Build of configuration x86_64-debug for project des_display ****
 make -j7 all 
 make: Nothing to be done for 'all'.
-18:39:54 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+19:18:20 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+19:21:22 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+19:21:23 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_display.d,-MT,build/x86_64-debug/src/des_display.o -o build/x86_64-debug/src/des_display.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_display.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_display   build/x86_64-debug/src/des_display.o  
+19:21:23 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
+19:26:57 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+19:28:09 **** Incremental Build of configuration x86_64-debug for project des_controller ****
+make -j7 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_controller.d,-MT,build/x86_64-debug/src/des_controller.o -o build/x86_64-debug/src/des_controller.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_controller.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_controller   build/x86_64-debug/src/des_controller.o  
+19:28:09 **** Incremental Build of configuration x86_64-debug for project des_display ****
+make -j7 all 
+make: Nothing to be done for 'all'.
+19:28:09 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
 make: Nothing to be done for 'all'.

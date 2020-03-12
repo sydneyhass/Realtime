@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
 			person.direction = OUTBOUND;
 
 		}
-		if (MsgSend(coid, &person, sizeof(Person), NULL, 0) == -1L) {
+		if (MsgSend(coid, &person, sizeof(Person) + 1, NULL, 0) == -1L) {
 			fprintf(stderr, "Inputs MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}
