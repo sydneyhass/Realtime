@@ -83,7 +83,6 @@ const char *outMessage[NUM_OUTPUTS] = {
 
 // inputs client sends a Person struct to its server, the controller
 typedef struct {
-	char msg[5];
 	int personID;
 	int weight;
 	enum {

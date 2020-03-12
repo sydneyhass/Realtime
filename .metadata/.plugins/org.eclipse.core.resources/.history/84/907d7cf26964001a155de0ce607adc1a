@@ -17,7 +17,7 @@ int main(void) {
 
 	printf("The display is running as PID: %d", getpid());
 
-	if ((chid = ChannelCreate(1)) == -1) {
+	if ((chid = ChannelCreate(0)) == -1) {
 		perror("Display ChannelCreate error.");
 		exit(EXIT_FAILURE);
 	}
