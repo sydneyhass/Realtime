@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
 
 	controllerpid = atoi(argv[1]);
 
-	if ((coid = ConnectAttach(ND_LOCAL_NODE, controllerpid, 1,
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, controllerpid, 0,
 			_NTO_SIDE_CHANNEL, 0)) == -1) {
 		fprintf(stderr, "Inputs ConnectAttach error\n");
 		perror(NULL);
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 			person.direction = OUTBOUND;
 
 		}
-		if (MsgSend(coid, &person, sizeof(Person), NULL, 0) == -1L) {
+		if (MsgSend(coid, &person, sizeof(person) + 1, NULL, 0) == -1L) {
 			fprintf(stderr, "Inputs MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}

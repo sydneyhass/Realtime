@@ -24,8 +24,12 @@ int main(void) {
 
 	while (1) {
 
-		if ((rcvid = MsgReceive(chid, &display, sizeof(Display), NULL)) < 0) {
+		if ((rcvid = MsgReceive(chid, display, sizeof(display), NULL)) < 0) {
 			perror("Display MsgRecieve error.");
+			exit(EXIT_FAILURE);
+		}
+		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
+			perror("Display MsgReply error.");
 			exit(EXIT_FAILURE);
 		}
 		if (strcmp(rMsg, inMessage[LS_INPUT]) == 0
@@ -36,12 +40,9 @@ int main(void) {
 		else if (strcmp(rMsg, inMessage[WS_INPUT]) == 0) {
 			printf("Person weighed, weight = %d\n", display.person.weight);
 		}
+
 		else {
 			printf("%s\n", outMessage[0]);
-		}
-		if (MsgReply(rcvid, EOK, &rMsg, sizeof(rMsg)) == -1) {
-			perror("Display MsgReply error.");
-			exit(EXIT_FAILURE);
 		}
 	}
 
