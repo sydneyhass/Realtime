@@ -36,6 +36,7 @@ void *start_state(Person *p, Display *display) {
 }
 
 void *scan_state(Person *p, Display *display) {
+	p->state = START_STATE;
 	if (strcmp(p->msg, inMessage[GLU_INPUT]) == 0) {
 		display->outMessage = GLU_MSG;
 		return unlock_state;
@@ -53,7 +54,6 @@ void *scan_state(Person *p, Display *display) {
 		display->outMessage = RC_MSG;
 		return close_state;
 	}
-	p->state = START_STATE;
 	return scan_state;
 }
 

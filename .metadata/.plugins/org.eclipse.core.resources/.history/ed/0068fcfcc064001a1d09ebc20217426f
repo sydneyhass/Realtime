@@ -29,7 +29,7 @@ int main(void) {
 		}
 
 		printf("%s\n", display.person.msg);
-		if (display.person.state == SCAN_STATE && !display.person.weight) {
+		if (strcmp(display.person.msg, inMessage[LS_INPUT]) == 0 || strcmp(display.person.msg, inMessage[RS_INPUT]) == 0) {
 			printf("Person scanned ID, ID = %d\n", display.person.personID);
 		}
 

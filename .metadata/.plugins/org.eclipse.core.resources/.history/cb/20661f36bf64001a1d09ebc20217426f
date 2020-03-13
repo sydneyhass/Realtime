@@ -21,12 +21,11 @@ void *close_state(Person *p, Display *display);
 
 void *start_state(Person *p, Display *display) {
 	// Check for scan state, no message made as display creates it
-	if (strcmp(p->msg, inMessage[LS_INPUT]) == 0
-			|| strcmp(p->msg, inMessage[RS_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[LS_INPUT]) == 0 || strcmp(p->msg, inMessage[RS_INPUT]) == 0){
 		p->state = SCAN_STATE;
 		return scan_state;
 	}
-	if (strcmp(p->msg, inMessage[EXIT_INPUT]) == 0) {
+	if(strcmp(p->msg, inMessage[EXIT_INPUT]) == 0) {
 		display->outMessage = WAIT_MSG;
 	}
 	// Invalid state, make person state start for the purpose of display
@@ -76,16 +75,16 @@ void *unlock_state(Person *p, Display *display) {
 
 void *open_state(Person *p, Display *display) {
 	//Person will be scan state when being weighed, let display make message
-	if (strcmp(p->msg, inMessage[WS_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[WS_INPUT]) == 0){
 		p->state = SCAN_STATE;
 		return scan_state;
 	}
 	//Close left if inbound, right if outbound
-	if (strcmp(p->msg, inMessage[LC_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[LC_INPUT]) == 0){
 		display->outMessage = LC_MSG;
 		return close_state;
 	}
-	if (strcmp(p->msg, inMessage[RC_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[RC_INPUT]) == 0){
 		display->outMessage = RC_MSG;
 		return close_state;
 	}
@@ -95,11 +94,11 @@ void *open_state(Person *p, Display *display) {
 
 void *lock_state(Person *p, Display *display) {
 	// Unlock r if inbound
-	if (strcmp(p->msg, inMessage[GRU_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[GRU_INPUT]) == 0){
 		display->outMessage = GRU_MSG;
 		return unlock_state;
 	}
-	if (strcmp(p->msg, inMessage[GLU_INPUT]) == 0) {
+	if (strcmp(p->msg, inMessage[GLU_INPUT]) == 0){
 		display->outMessage = GLU_MSG;
 		return unlock_state;
 	}
@@ -108,21 +107,21 @@ void *lock_state(Person *p, Display *display) {
 }
 
 void *close_state(Person *p, Display *display) {
-	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0) {
-		display->outMessage = GLL_MSG;
-		if (p->direction == INBOUND)
-			return lock_state;
-
-		p->state = START_STATE;
+	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0 && p->direction == OUTBOUND){
+		display->outMessage = WAIT_MSG;
 		return start_state;
 	}
-	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0) {
-		display->outMessage = GRL_MSG;
-		if (p->direction == INBOUND)
-			return lock_state;
-
-		p->state = START_STATE;
+	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0){
+		display->outMessage = GLL_MSG;
+		return lock_state;
+	}
+	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0 && p->direction == OUTBOUND){
+		display->outMessage = WAIT_MSG;
 		return start_state;
+	}
+	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0){
+		display->outMessage = GRL_MSG;
+		return lock_state;
 	}
 	display->outMessage = ERR_MSG;
 	return close_state;
@@ -136,7 +135,9 @@ int main(int argc, char* argv[]) {
 	Person person;
 	Display display;
 
+	display.outMessage = WAIT_MSG;
 	StateFunc statefunc = start_state;
+
 
 	if (argc != 2) {
 		fprintf(stderr, "Wrong number of arguments\n");
@@ -150,8 +151,7 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, chid,
-	_NTO_SIDE_CHANNEL, 0)) == -1) {
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, displaypid, chid, _NTO_SIDE_CHANNEL, 0)) == -1) {
 		fprintf(stderr, "Controller ConnectAttach error\n");
 		perror(NULL);
 		exit(EXIT_FAILURE);
@@ -166,7 +166,7 @@ int main(int argc, char* argv[]) {
 			return EXIT_FAILURE;
 		}
 
-		if (strcmp(person.msg, inMessage[EXIT_INPUT]) == 0)
+		if(strcmp(person.msg, inMessage[EXIT_INPUT]) == 0)
 			person.state = EXIT_STATE;
 
 		// Call state and assign next state
@@ -181,6 +181,7 @@ int main(int argc, char* argv[]) {
 			exit(EXIT_FAILURE);
 		}
 
+
 		if (MsgReply(rcvid, EOK, NULL, 0) == -1) {
 			perror("Controller's MsgReply error.\n");
 			exit(EXIT_FAILURE);
@@ -192,11 +193,11 @@ int main(int argc, char* argv[]) {
 
 	}
 
-	if (ConnectDetach(coid) == -1) {
+	if(ConnectDetach(coid) == -1) {
 		perror("Controller ConnectDetach error.\n");
 		exit(EXIT_FAILURE);
 	}
-	if (ChannelDestroy(chid) == -1) {
+	if(ChannelDestroy(chid) == -1) {
 		perror("Controller ChannelDestory error.\n");
 		exit(EXIT_FAILURE);
 	}
