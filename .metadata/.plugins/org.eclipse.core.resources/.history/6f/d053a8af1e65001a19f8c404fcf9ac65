@@ -27,7 +27,9 @@ int main(void) {
 			perror("Display MsgRecieve error.\n");
 			exit(EXIT_FAILURE);
 		}
-		if (display.person.state == SCAN_STATE && !display.person.weight && display.person.personID) {
+
+		printf("%s\n", display.person.msg);
+		if (display.person.state == SCAN_STATE && !display.person.weight) {
 			printf("Person scanned ID, ID = %d\n", display.person.personID);
 		}
 
