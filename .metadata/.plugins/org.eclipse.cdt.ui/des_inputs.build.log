@@ -1,6 +1,7 @@
-17:55:09 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
+19:35:40 **** Incremental Build of configuration x86_64-debug for project des_inputs ****
 make -j7 all 
-make: Nothing to be done for 'all'.
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/des_inputs.d,-MT,build/x86_64-debug/src/des_inputs.o -o build/x86_64-debug/src/des_inputs.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/des_inputs.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/des_inputs   build/x86_64-debug/src/des_inputs.o  
 
-17:55:09 Build Finished (took 81ms)
+19:35:40 Build Finished (took 190ms)
 
