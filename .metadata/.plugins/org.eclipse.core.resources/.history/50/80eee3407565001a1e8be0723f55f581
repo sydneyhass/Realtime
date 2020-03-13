@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
 
 		}
 
+		printf("%s\n", person.msg);
 		if (MsgSend(coid, &person, sizeof(Person) + 1, NULL, 0) == -1L) {
 			fprintf(stderr, "Inputs MsgSend had an error\n");
 			exit(EXIT_FAILURE);

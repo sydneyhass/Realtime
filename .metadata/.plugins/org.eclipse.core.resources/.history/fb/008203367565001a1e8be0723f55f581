@@ -193,6 +193,8 @@ int main(int argc, char* argv[]) {
 
 		// Add person to display struct
 		display.person = person;
+		printf("%s\n", display.person.msg);
+
 		if (MsgSend(coid, &display, sizeof(Display) + 1, NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
