@@ -54,6 +54,6 @@ int main(void) {
 		exit(EXIT_FAILURE);
 	}
 
-	printf("Exiting Display\n");
+	printf("Exiting display");
 	return EXIT_SUCCESS;
 }

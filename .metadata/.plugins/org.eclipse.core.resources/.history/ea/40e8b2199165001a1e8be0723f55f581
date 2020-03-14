@@ -127,7 +127,7 @@ void *lock_state(Person *p, Display *display) {
 void *close_state(Person *p, Display *display) {
 	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0) {
 		display->outMessage = GLL_MSG;
-		if (direction == INBOUND) {
+		if (direction == INBOUND){
 			p->direction = OUTBOUND;
 			direction = OUTBOUND;
 			p->state = LOCK_STATE;
@@ -138,7 +138,7 @@ void *close_state(Person *p, Display *display) {
 	}
 	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0) {
 		display->outMessage = GRL_MSG;
-		if (direction == INBOUND) {
+		if (direction == INBOUND){
 			p->state = LOCK_STATE;
 			p->direction = OUTBOUND;
 			direction = OUTBOUND;
@@ -194,8 +194,8 @@ int main(int argc, char* argv[]) {
 		statefunc = (StateFunc) (*statefunc)(&person, &display);
 
 		if (strcmp(person.msg, inMessage[EXIT_INPUT]) == 0) {
-			person.state = EXIT_STATE;
-		}
+							person.state = EXIT_STATE;
+						}
 
 		// Add person to display struct
 		person.direction = direction;
