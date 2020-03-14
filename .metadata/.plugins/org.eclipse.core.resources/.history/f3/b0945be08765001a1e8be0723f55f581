@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/neutrino.h>
+#include <sys/netmgr.h>
+
+#include "../../des_controller/src/des-mva.h"
+
+void displayMenu();
+
+int main(int argc, char* argv[]) {
+	int coid;
+	pid_t controllerpid;
+	Person person;
+
+	if (argc != 2) {
+		fprintf(stderr, "Wrong number of arguments\n");
+		exit(EXIT_FAILURE);
+	}
+
+	controllerpid = atoi(argv[1]);
+
+	if ((coid = ConnectAttach(ND_LOCAL_NODE, controllerpid, 1,
+			_NTO_SIDE_CHANNEL, 0)) == -1) {
+		fprintf(stderr, "Inputs ConnectAttach error\n");
+		perror(NULL);
+		exit(EXIT_FAILURE);
+	}
+
+	while (1) {
+		displayMenu();
+		scanf("%s", person.msg);
+
+		if ((strcmp(person.msg, inMessage[LS_INPUT]) == 0)
+				|| (strcmp(person.msg, inMessage[RS_INPUT]) == 0)) {
+			person.weight = 0;
+			person.direction = INBOUND;
+			printf("Enter your ID: \n");
+			scanf("%d", &person.personID);
+
+		} else if (strcmp(person.msg, inMessage[WS_INPUT]) == 0) {
+			printf("Enter your weight: \n");
+			scanf("%d", &person.weight);
+		}
+
+		if (MsgSend(coid, &person, sizeof(Person), NULL, 0) == -1L) {
+			fprintf(stderr, "Inputs MsgSend had an error\n");
+			exit(EXIT_FAILURE);
+		}
+
+		if(strcmp(person.msg, inMessage[EXIT_INPUT]) == 0) {
+			break;
+		}
+	}
+
+	if (ConnectDetach(coid) == -1) {
+		perror("Inputs ConnectDetach error.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	return EXIT_SUCCESS;
+}
+
+void displayMenu() {
+	printf("\nEnter the event type:\n");
+	printf("\t%s\n", "ls  - left scan");
+	printf("\t%s\n", "rs  - right scan");
+	printf("\t%s\n", "ws  - weight scale");
+	printf("\t%s\n", "lo  - left open");
+	printf("\t%s\n", "ro  - right open");
+	printf("\t%s\n", "lc  - left close");
+	printf("\t%s\n", "rc  - right close");
+	printf("\t%s\n", "gru - guard right unlock");
+	printf("\t%s\n", "glu - guard left unlock");
+	printf("\t%s\n", "grl - guard right lock");
+	printf("\t%s\n", "gll - guard left lock");
+	printf("\t%s\n", "exit  - quit the program");
+}

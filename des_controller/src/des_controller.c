@@ -9,6 +9,7 @@
 
 #include "des-mva.h"
 
+int direction = INBOUND;
 typedef void *(*StateFunc)();
 
 //state function pointers
@@ -23,8 +24,8 @@ void *start_state(Person *p, Display *display) {
 	// Check for scan state, no message made as display creates it
 	if (strcmp(p->msg, inMessage[LS_INPUT]) == 0
 			|| strcmp(p->msg, inMessage[RS_INPUT]) == 0) {
-		p->direction = INBOUND;
 		p->state = SCAN_STATE;
+		p->direction = INBOUND;
 		return scan_state;
 	}
 	if (strcmp(p->msg, inMessage[EXIT_INPUT]) == 0) {
@@ -66,7 +67,6 @@ void *scan_state(Person *p, Display *display) {
 }
 
 void *unlock_state(Person *p, Display *display) {
-
 	// If person state is open, left open and progress to open state
 	if (strcmp(p->msg, inMessage[LO_INPUT]) == 0) {
 		display->outMessage = LO_MSG;
@@ -127,8 +127,9 @@ void *lock_state(Person *p, Display *display) {
 void *close_state(Person *p, Display *display) {
 	if (strcmp(p->msg, inMessage[GLL_INPUT]) == 0) {
 		display->outMessage = GLL_MSG;
-		if (p->direction == INBOUND){
+		if (direction == INBOUND){
 			p->direction = OUTBOUND;
+			direction = OUTBOUND;
 			p->state = LOCK_STATE;
 			return lock_state;
 		}
@@ -137,9 +138,10 @@ void *close_state(Person *p, Display *display) {
 	}
 	if (strcmp(p->msg, inMessage[GRL_INPUT]) == 0) {
 		display->outMessage = GRL_MSG;
-		if (p->direction == INBOUND){
+		if (direction == INBOUND){
 			p->state = LOCK_STATE;
 			p->direction = OUTBOUND;
+			direction = OUTBOUND;
 			return lock_state;
 		}
 		p->state = START_STATE;
@@ -183,20 +185,18 @@ int main(int argc, char* argv[]) {
 	printf("%s\n", outMessage[WAIT_MSG]);
 
 	while (1) {
-		if ((rcvid = MsgReceive(chid, &person, sizeof(Person) + 1, NULL)) < 0) {
+		if ((rcvid = MsgReceive(chid, &person, sizeof(Person), NULL)) < 0) {
 			perror("Controller's MsgReceive error.\n");
 			return EXIT_FAILURE;
 		}
-
-		if (strcmp(person.msg, inMessage[EXIT_INPUT]) == 0)
-			person.state = EXIT_STATE;
 
 		// Call state and assign next state
 		statefunc = (StateFunc) (*statefunc)(&person, &display);
 
 		// Add person to display struct
+		person.direction = direction;
 		display.person = person;
-		if (MsgSend(coid, &display, sizeof(Display) + 1, NULL, 0) == -1) {
+		if (MsgSend(coid, &display, sizeof(Display), NULL, 0) == -1) {
 			fprintf(stderr, "Controller's MsgSend had an error\n");
 			exit(EXIT_FAILURE);
 		}
@@ -206,10 +206,10 @@ int main(int argc, char* argv[]) {
 			exit(EXIT_FAILURE);
 		}
 
-		// Can just break here as above msgSend will send person.state = exit to Display which will trigger break condition there
-		if (person.state == EXIT_STATE)
+		if (strcmp(person.msg, inMessage[EXIT_INPUT]) == 0) {
+			person.state = EXIT_STATE;
 			break;
-
+		}
 	}
 
 	if (ConnectDetach(coid) == -1) {
